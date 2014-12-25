@@ -18,6 +18,10 @@ Author: Stefano Cudini
 * prevent parallel requests
 * filter by sub elements
 
+**Options:**
+* configurable delay with delay option
+* search entre string rather than beginning alone by passing { initial: '' }
+
 **Demo online:**
 * [Homepage](http://labs.easyblog.it/bootstrap-list-filter/)
 * [Static example](http://labs.easyblog.it/bootstrap-list-filter/examples/static.html)

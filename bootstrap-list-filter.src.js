@@ -43,15 +43,11 @@
 			},
 			itemEl: '.list-group-item',
 			itemChild: null,	
-			itemFilter: function(item, val) {
-				//val = val.replace(new RegExp("^[.]$|[\[\]|()*]",'g'),'');
-				//val = val.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-				val = val && val.replace(new RegExp("[({[^.$*+?\\\]})]","g"),'');
-				
-				var text = $(item).text(),
-					i = options.initial ? '^' : '',
-					regSearch = new RegExp(i + val,'i');
-				return regSearch.test( text );
+			itemFilter: function(item, regexpr) {
+				regexpr = regexpr && regexpr.replace(new RegExp("[({[^.$*+?\\\]})]","g"),'');
+				var text = $(item).text(), i = options.initial ? '^' : ''
+				var regSearch = new RegExp(regexpr, 'i');
+				return regSearch.test(text);
 			}
 		}, options);		
 
